@@ -21,9 +21,9 @@ class PostListViewModel(var _posts: List<PostItemViewModel>) : BaseObservable() 
             notifyPropertyChanged(BR.posts)
         }
 
-    init {
-        posts = testPostItems()
-    }
+//    init {
+//        posts = testPostItems()
+//    }
 
     fun testPostItems(): List<PostItemViewModel> {
         val postItemViewModel = PostItemViewModel("1", "title1")
@@ -31,6 +31,10 @@ class PostListViewModel(var _posts: List<PostItemViewModel>) : BaseObservable() 
         val list = listOf<PostItemViewModel>(postItemViewModel, postItemViewMode2)
         return list
     }
+
+
+    @Bindable
+    fun getList() = testPostItems()
 
     @Bindable
     fun getItemLayoutId() = R.layout.post_item_layout

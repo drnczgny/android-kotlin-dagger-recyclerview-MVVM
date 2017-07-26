@@ -14,21 +14,21 @@ class RecyclerViewAdapter<T : ListItemViewModel> : RecyclerView.Adapter<Recycler
 
     var items: List<T>
         get() = items
-        set(items) {
-            this.items = items
+        set(value) {
+            items = value
             notifyDataSetChanged()
         }
 
     var variableId: Int
         get() = variableId
-        set(variableId) {
-            this.variableId = variableId
+        set(value) {
+            variableId = value
         }
 
     var itemLayout: Int
         get() = itemLayout
-        set(itemLayout) {
-            this.itemLayout = itemLayout
+        set(value) {
+            itemLayout = value
         }
 
     override fun getItemCount(): Int {
