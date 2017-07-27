@@ -12,14 +12,14 @@ import com.adrian.kotlin.R
 
 class PostListViewModel(var _posts: List<PostItemViewModel>) : BaseObservable() {
 
-    var posts: List<PostItemViewModel>
-        @Bindable get() {
-            return _posts
-        }
-        set(posts) {
-            _posts = posts
-            notifyPropertyChanged(BR.posts)
-        }
+//    companion object {
+//        val items = listOf<PostItemViewModel>(PostItemViewModel("1", "title1"), PostItemViewModel("2", "title2"))
+//    }
+
+
+    var testText = "testText"
+
+    var posts = testPostItems()
 
 //    init {
 //        posts = testPostItems()
@@ -31,10 +31,6 @@ class PostListViewModel(var _posts: List<PostItemViewModel>) : BaseObservable() 
         val list = listOf<PostItemViewModel>(postItemViewModel, postItemViewMode2)
         return list
     }
-
-
-    @Bindable
-    fun getList() = testPostItems()
 
     @Bindable
     fun getItemLayoutId() = R.layout.post_item_layout

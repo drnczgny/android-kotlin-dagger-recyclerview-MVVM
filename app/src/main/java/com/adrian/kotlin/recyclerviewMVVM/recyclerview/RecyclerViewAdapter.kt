@@ -12,24 +12,24 @@ import android.view.ViewGroup
 
 class RecyclerViewAdapter<T : ListItemViewModel> : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    var items: List<T>
-        get() = items
-        set(value) {
-            items = value
-            notifyDataSetChanged()
-        }
+    var items: List<T> = ArrayList<T>()
+//        get() = items
+//        set(value) {
+//            items = value
+//            notifyDataSetChanged()
+//        }
 
-    var variableId: Int
-        get() = variableId
-        set(value) {
-            variableId = value
-        }
+    var variableId: Int = 0
+//        get() = variableId
+//        set(value) {
+//            variableId = value
+//        }
 
-    var itemLayout: Int
-        get() = itemLayout
-        set(value) {
-            itemLayout = value
-        }
+    var itemLayout: Int = 0
+//        get() = itemLayout
+//        set(value) {
+//            itemLayout = value
+//        }
 
     override fun getItemCount(): Int {
         return items.size
@@ -44,7 +44,7 @@ class RecyclerViewAdapter<T : ListItemViewModel> : RecyclerView.Adapter<Recycler
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         holder as BindingViewHolder<T>
         val itemViewModel = items[position]
-        holder.bind(itemViewModel, variableId)
+        holder.bind(itemViewModel as T, variableId)
     }
 
     inner class BindingViewHolder<T : ListItemViewModel>(val binding: ViewDataBinding) : RecyclerView.ViewHolder(binding.root) {

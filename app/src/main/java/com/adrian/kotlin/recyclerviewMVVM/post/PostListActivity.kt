@@ -3,6 +3,7 @@ package com.adrian.kotlin.recyclerviewMVVM.post
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.LinearLayoutManager
 import com.adrian.kotlin.R
 import com.adrian.kotlin.databinding.ActivityPostListBinding
 import com.android.databinding.library.baseAdapters.BR
@@ -31,9 +32,11 @@ class PostListActivity : AppCompatActivity() {
     private fun bind() {
         binding = DataBindingUtil.setContentView(this, getLayoutId())
         this.postListViewModel = if (postListViewModel == null) PostListViewModel(testItems()) else postListViewModel
-//        binding?.setVariable(getVariableId(), postListViewModel)
-        binding?.viewModel = postListViewModel
+        binding?.setVariable(getVariableId(), postListViewModel)
+//        binding?.viewModel = postListViewModel
         binding?.executePendingBindings()
+
+        binding?.list?.setLayoutManager(LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false))
     }
 
     fun getLayoutId(): Int {
