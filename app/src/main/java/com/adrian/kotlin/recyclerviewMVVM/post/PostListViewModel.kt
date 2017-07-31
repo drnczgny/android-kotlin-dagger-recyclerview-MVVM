@@ -4,6 +4,7 @@ import android.databinding.BaseObservable
 import android.databinding.Bindable
 import com.adrian.kotlin.BR
 import com.adrian.kotlin.R
+import com.adrian.kotlin.recyclerviewMVVM.post.domain.PostItemViewModel
 
 
 /**
@@ -15,15 +16,10 @@ class PostListViewModel(var _posts: List<PostItemViewModel>) : BaseObservable() 
 //    companion object {
 //        val items = listOf<PostItemViewModel>(PostItemViewModel("1", "title1"), PostItemViewModel("2", "title2"))
 //    }
-
-
+    
     var testText = "testText"
 
     var posts = testPostItems()
-
-//    init {
-//        posts = testPostItems()
-//    }
 
     fun testPostItems(): List<PostItemViewModel> {
         val postItemViewModel = PostItemViewModel("1", "title1")

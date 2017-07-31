@@ -21,10 +21,5 @@ class MainActivity : AppCompatActivity() {
 
         var intent = Intent(this, PostListActivity::class.java)
         startActivity(intent)
-
-//        list.layoutManager = LinearLayoutManager(this)
-//        list.hasFixedSize()
-//        list.adapter = MyAdapter(this, getLists())
     }
-
 }

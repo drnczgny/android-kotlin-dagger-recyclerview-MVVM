@@ -5,7 +5,7 @@
 
         <variable
             name="viewModel"
-            type="com.adrian.kotlin.recyclerviewMVVM.post.PostItemViewModel" />
+            type="com.adrian.kotlin.recyclerviewMVVM.post.domain.PostItemViewModel" />
     </data>
 
     <LinearLayout

@@ -1,4 +1,4 @@
-package com.adrian.kotlin.recyclerviewMVVM.post
+package com.adrian.kotlin.recyclerviewMVVM.post.domain
 
 import android.databinding.Bindable
 import com.adrian.kotlin.BR
