@@ -19,11 +19,11 @@ class PostListModule(val postListActivity: PostListActivity) {
 //        return postListActivity
 //    }
 
-    @ActivityScope
-    @Provides
-    fun providesPostListModel(): PostListModel {
-        return PostListModel()
-    }
+//    @ActivityScope
+//    @Provides
+//    fun providesPostListModel(): PostListModel {
+//        return PostListModel()
+//    }
 
 //    @ActivityScope
 //    @Provides

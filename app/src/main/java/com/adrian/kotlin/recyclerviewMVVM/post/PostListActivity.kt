@@ -34,8 +34,8 @@ class PostListActivity : AppCompatActivity(), PostListRouter {
 
     fun bind() {
         binding = DataBindingUtil.setContentView(this, getLayoutId())
-        binding?.setVariable(getVariableId(), postListViewModel)
-        // binding?.viewModel = postListViewModel
+        binding?.viewModel = postListViewModel
+//        binding?.setVariable(getVariableId(), postListViewModel)
         binding?.executePendingBindings()
     }
 
