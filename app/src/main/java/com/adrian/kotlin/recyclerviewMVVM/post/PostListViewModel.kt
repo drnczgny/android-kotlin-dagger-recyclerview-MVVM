@@ -5,18 +5,15 @@ import android.databinding.Bindable
 import com.adrian.kotlin.BR
 import com.adrian.kotlin.R
 import com.adrian.kotlin.recyclerviewMVVM.post.domain.PostItemViewModel
+import javax.inject.Inject
 
 
 /**
  * Created by cadri on 2017. 07. 26..
  */
 
-class PostListViewModel(var _posts: List<PostItemViewModel>) : BaseObservable() {
+class PostListViewModel @Inject constructor() : BaseObservable() {
 
-//    companion object {
-//        val items = listOf<PostItemViewModel>(PostItemViewModel("1", "title1"), PostItemViewModel("2", "title2"))
-//    }
-    
     var testText = "testText"
 
     var posts = testPostItems()
@@ -32,5 +29,7 @@ class PostListViewModel(var _posts: List<PostItemViewModel>) : BaseObservable() 
     fun getItemLayoutId() = R.layout.post_item_layout
 
     @Bindable
-    fun getVariableId() = BR.viewModel
+    fun getVariableId(): Int {
+        return BR.viewModel
+    }
 }

@@ -4,21 +4,29 @@ import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
+import com.adrian.kotlin.BR
 import com.adrian.kotlin.R
 import com.adrian.kotlin.databinding.ActivityPostListBinding
+import com.adrian.kotlin.recyclerviewMVVM.post.di.PostListComponent
 import com.adrian.kotlin.recyclerviewMVVM.post.domain.PostItemViewModel
-import com.android.databinding.library.baseAdapters.BR
+import com.adrian.kotlin.recyclerviewMVVM.post.router.PostListRouter
+import javax.inject.Inject
 
 
-class PostListActivity : AppCompatActivity() {
+class PostListActivity : AppCompatActivity(), PostListRouter {
 
-    var postListViewModel = PostListViewModel(testItems())
+
+//    var postListViewModel: PostListViewModel = PostListViewModel(PostListModel())
+
+    @Inject
+    lateinit var postListViewModel: PostListViewModel
 
     lateinit var binding: ActivityPostListBinding
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        PostListComponent.Injector.buildComponent(this).inject(this)
         bind()
 
         binding?.list?.setLayoutManager(LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false))
@@ -26,7 +34,6 @@ class PostListActivity : AppCompatActivity() {
 
     fun bind() {
         binding = DataBindingUtil.setContentView(this, getLayoutId())
-        this.postListViewModel = if (postListViewModel == null) PostListViewModel(testItems()) else postListViewModel
         binding?.setVariable(getVariableId(), postListViewModel)
         // binding?.viewModel = postListViewModel
         binding?.executePendingBindings()
