@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/KotlinWithDagger2.iml" filepath="$PROJECT_DIR$/KotlinWithDagger2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/android-kotlin-dagger-recyclerview.iml" filepath="$PROJECT_DIR$/android-kotlin-dagger-recyclerview.iml" />
+      <module fileurl="file://C:\Users\cadri\AndroidStudioProjects\android-kotlin-dagger-recyclerview-MVVM\KotlinWithDagger2.iml" filepath="C:\Users\cadri\AndroidStudioProjects\android-kotlin-dagger-recyclerview-MVVM\KotlinWithDagger2.iml" />
+      <module fileurl="file://C:\Users\cadri\AndroidStudioProjects\android-kotlin-dagger-recyclerview-MVVM\android-kotlin-dagger-recyclerview.iml" filepath="C:\Users\cadri\AndroidStudioProjects\android-kotlin-dagger-recyclerview-MVVM\android-kotlin-dagger-recyclerview.iml" />
       <module fileurl="file://$PROJECT_DIR$/android-kotlin-dagger-recyclerview-MVVM.iml" filepath="$PROJECT_DIR$/android-kotlin-dagger-recyclerview-MVVM.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
